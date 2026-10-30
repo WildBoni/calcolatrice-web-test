@@ -58,12 +58,13 @@ button:focus-visible {
 }
 
 .operatore {
-    background: #1a56db;
+    background: #15803d;
     color: #fff;
 }
 
 .azione {
-    background: #d8d8d8;
+    background: #dc2626;
+    color: #fff;
 }
 
 .larga-2 {
