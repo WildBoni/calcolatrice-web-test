@@ -15,3 +15,10 @@ function dividi(a, b) {
     }
     return a / b;
 }
+
+function radiceQuadrata(a) {
+    if (a < 0) {
+        throw new Error("Radice quadrata di un numero negativo non consentita");
+    }
+    return Math.sqrt(a);
+}

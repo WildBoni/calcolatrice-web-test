@@ -1,5 +1,13 @@
+:root {
+    --color-rosso: red;
+}
+
 * {
     box-sizing: border-box;
+}
+
+h1 {
+    color: var(--color-rosso);
 }
 
 body {

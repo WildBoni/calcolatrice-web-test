@@ -13,6 +13,8 @@ let corrente = "0";
 let precedente = null;
 let operatore = null;
 let nuovoNumero = true;
+// Il risultato di una radice è il secondo operando anche se nuovoNumero è true
+let operandoDaRadice = false;
 
 function formatta(numero) {
     // Elimina gli errori di arrotondamento dei float (es. 0.1 + 0.2)
@@ -31,6 +33,7 @@ function cancella() {
     precedente = null;
     operatore = null;
     nuovoNumero = true;
+    operandoDaRadice = false;
 }
 
 function inserisciCifra(cifra) {
@@ -63,11 +66,25 @@ function calcola() {
     precedente = null;
     operatore = null;
     nuovoNumero = true;
+    operandoDaRadice = false;
+    return true;
+}
+
+function applicaRadice() {
+    try {
+        corrente = formatta(radiceQuadrata(Number(corrente)));
+    } catch (errore) {
+        cancella();
+        display.textContent = "Errore: √ < 0";
+        return false;
+    }
+    nuovoNumero = true;
+    operandoDaRadice = operatore !== null;
     return true;
 }
 
 function scegliOperatore(nuovoOperatore) {
-    if (operatore !== null && !nuovoNumero && !calcola()) {
+    if (operatore !== null && (!nuovoNumero || operandoDaRadice) && !calcola()) {
         return false;
     }
     precedente = Number(corrente);
@@ -95,6 +112,8 @@ document.querySelector(".tasti").addEventListener("click", (evento) => {
         aggiornaDisplay = scegliOperatore(tastoOperatore);
     } else if (azione === "punto") {
         inserisciPunto();
+    } else if (azione === "radice") {
+        aggiornaDisplay = applicaRadice();
     } else if (azione === "uguale") {
         aggiornaDisplay = uguale();
     } else if (azione === "cancella") {
