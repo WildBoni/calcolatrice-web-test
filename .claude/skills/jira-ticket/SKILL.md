@@ -1,5 +1,5 @@
 ---
-name: jira-onboarding
+name: jira-ticket
 description: Gestisce l'intero ciclo di un task Jira. Cerca i ticket in TODO raggruppati per utente, effettua il branching, esegue il grilling per creare l'handoff, delega a subagent (test e codice) e chiede il permesso per la PR. Trigger con "avvia ciclo jira" o "inizia flusso ticket".
 compatibility: Richiede Jira MCP attivo e accesso a Git locale.
 ---
@@ -8,7 +8,7 @@ compatibility: Richiede Jira MCP attivo e accesso a Git locale.
 Agisci come l'Orchestratore del Team. Segui rigidamente questa sequenza di step senza saltarne alcuno.
 
 ## Step 1: Estrazione e Raggruppamento Ticket
-1. Interroga l'MCP di Jira per trovare tutti i ticket nello stato "Da fare" (o equivalente nell'attuale sprint/board).
+1. Interroga l'MCP di Jira per trovare tutti i ticket nello stato "Da fare" (o equivalente nell'attuale sprint/board) del progetto <ID-PROGETTO>.
 2. Estrai gli assegnatari e **raggruppa visivamente i ticket per Utente e per priorità** (es. "Assegnati a [Nome]: [ID-Ticket] - [Titolo] - [Priorità]").
 3. Chiedi esplicitamente all'utente quale ID ticket intende avviare.
 

@@ -22,7 +22,7 @@ Division by zero crosses these layers: `dividi` throws, `calcola` catches the er
 
 Identifiers, UI text, code comments, and commit messages are in Italian.
 
-JavaScript preferences, from `.claude/skill/preferenze-js/SKILL.md`:
+JavaScript preferences, from `.claude/skills/preferenze-js/SKILL.md`:
 
 - Use the Temporal API (`Temporal.PlainDate`, `Temporal.PlainDateTime`, `Temporal.ZonedDateTime`) instead of `Date`.
 - Use `const` by default and `let` only when needed. Avoid `var`.
