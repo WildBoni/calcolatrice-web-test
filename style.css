@@ -1,5 +1,6 @@
 :root {
     --color-rosso: red;
+    --color-blu-operatore: #1a56db;
 }
 
 * {
@@ -66,7 +67,7 @@ button:focus-visible {
 }
 
 .operatore {
-    background: #15803d;
+    background: var(--color-blu-operatore);
     color: #fff;
 }
 
